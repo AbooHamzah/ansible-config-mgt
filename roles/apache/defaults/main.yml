@@ -22,7 +22,7 @@ apache_vhosts:
   - servername: "local.dev"
     documentroot: "/var/www/html"
     loadbalancer_name: "myapp1"
-    
+
 apache_allow_override: "All"
 apache_options: "-Indexes +FollowSymLinks"
 
@@ -63,5 +63,5 @@ apache_packages_state: present
 
 #uat-webservers
 loadbalancer_name: "myapp1"
-web1: "172.31.25.91"
-web2: "172.31.18.187"
+web1: "172.31.25.91 weight=3"
+web2: "172.31.18.187 weight=3"
