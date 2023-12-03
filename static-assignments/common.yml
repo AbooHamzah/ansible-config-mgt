@@ -11,9 +11,12 @@
 
 - name: update LB server
   hosts: lb
+  remote_user: ubuntu
+  become_user: root
   become: yes
   tasks:
     - name: Update apt repo
+      become: true
       apt: 
         update_cache: yes
 
